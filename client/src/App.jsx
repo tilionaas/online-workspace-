@@ -22,6 +22,7 @@ export default function App() {
       status={session.status}
       stream={session.stream}
       hasCamera={session.hasCamera}
+      onLeave={() => setSession(null)}
     />
   );
 }

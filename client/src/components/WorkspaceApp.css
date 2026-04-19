@@ -33,6 +33,26 @@
   font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
+.hud-leave {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+  letter-spacing: 0.5px;
+}
+.hud-leave:hover {
+  background: rgba(239, 68, 68, 0.22);
+  border-color: rgba(239, 68, 68, 0.55);
+  color: #fca5a5;
+}
+
 .hud-logo {
   font-size: 13px;
   font-weight: 800;

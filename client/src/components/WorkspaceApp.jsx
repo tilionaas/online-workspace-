@@ -22,7 +22,7 @@ import './WorkspaceApp.css';
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL || '';
 
-export default function WorkspaceApp({ username, status: initStatus, stream, hasCamera }) {
+export default function WorkspaceApp({ username, status: initStatus, stream, hasCamera, onLeave }) {
   const sceneRef   = useRef(null);
 
   // socket stored in state so hooks/effects can depend on it
@@ -217,6 +217,13 @@ export default function WorkspaceApp({ username, status: initStatus, stream, has
 
       {/* HUD: top bar */}
       <header className="hud-bar">
+        <button
+          className="hud-leave"
+          onClick={() => { socket?.disconnect(); onLeave?.(); }}
+          title="Leave workspace"
+        >
+          ← Leave
+        </button>
         <div className="hud-logo">Workspace</div>
 
         <div
