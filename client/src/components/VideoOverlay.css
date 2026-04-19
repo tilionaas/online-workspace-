@@ -1,0 +1,95 @@
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* ── Avatar container ─────────────────────────────────────────────────────── */
+.player-avatar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* transform is set by rAF; translate(-50%,-50%) centers the circle on world position */
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  /* offset so (0,0) is the avatar center */
+  margin-left: -36px;
+  margin-top:  -36px;
+}
+
+/* ── Circle ───────────────────────────────────────────────────────────────── */
+.avatar-circle {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2.5px solid var(--accent, #6366f1);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent, #6366f1) 40%, transparent);
+  background: #0a0a14;
+  flex-shrink: 0;
+}
+
+.avatar-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatar-video.mirrored { transform: scaleX(-1); }
+
+.avatar-default {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 800;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* "YOU" indicator */
+.avatar-you-dot {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 2px solid #0a0a0f;
+}
+
+/* ── Labels ───────────────────────────────────────────────────────────────── */
+.avatar-labels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.avatar-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #f1f5f9;
+  font-family: monospace;
+  text-shadow: 0 1px 4px #000, 0 0 8px #000;
+  letter-spacing: 0.2px;
+}
+
+.avatar-status {
+  font-size: 10px;
+  color: #94a3b8;
+  font-family: monospace;
+  text-shadow: 0 1px 3px #000;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
